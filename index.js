@@ -8,7 +8,7 @@ import multer from "multer"
 
 const app = express()
 const corsOptions = {
-  origin: 'http://localhost:5173', // Update this with your client's origin
+  origin: 'http://localhost:3000', // Update this with your client's origin
   credentials: true, // Allow cookies to be sent
 };
 
@@ -36,6 +36,7 @@ app.post('/api/upload', upload.single('file'), function (req, res) {
 app.use("/api/posts", postRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
+
 
 app.listen(8000, () => {
   console.log("Connected")
